@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meme App</title>
+</head>
+<body>
+  <h1>A simple meme generator</h1>
+
+  <form action="/create" method="POST" enctype="multipart/form-data">
+    <p>
+      <label for="image">Image:</label>
+      <input type="file" name="image" required>
+    </p>
+    <p>
+      <label for="title">Title:</label>
+      <input type="text" name="title"/>
+    </p>
+    <button>Generate Meme</button>
+  </form>
+  <p>
+    {% if meme is defined %}
+      <img src="meme/{{meme}}">
+    {% endif %}
+  </p>
+</body>
+</html>
